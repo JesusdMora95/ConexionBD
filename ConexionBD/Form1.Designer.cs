@@ -29,13 +29,34 @@ namespace ConexionBD
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.Conectar = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // Conectar
+            // 
+            this.Conectar.Location = new System.Drawing.Point(86, 90);
+            this.Conectar.Name = "Conectar";
+            this.Conectar.Size = new System.Drawing.Size(75, 23);
+            this.Conectar.TabIndex = 0;
+            this.Conectar.Text = "Conectar";
+            this.Conectar.UseVisualStyleBackColor = true;
+            this.Conectar.Click += new System.EventHandler(this.Conectar_Click_1);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(290, 175);
+            this.Controls.Add(this.Conectar);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button Conectar;
     }
 }
 

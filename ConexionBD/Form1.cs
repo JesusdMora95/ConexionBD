@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Windows;
 
 namespace ConexionBD
 {
@@ -15,6 +17,40 @@ namespace ConexionBD
         public Form1()
         {
             InitializeComponent();
+        }
+        //Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\valen\source\repos\ConeccionBD\Presentacion\Prueba.mdf;Integrated Security = True
+
+        public void Coneccion()
+        {
+            string connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\source\\repos\\ConexionBD\\ConexionBD\\Database1.mdf;Integrated Security = True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            Mensaje(connection);
+        }
+
+        public void Mensaje(SqlConnection connection)
+        {
+            try
+            {
+                connection.Open();
+                MessageBox.Show(" Conectado ");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(" Error al conectar " + e.Message);
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+                MessageBox.Show(" Desconectado ");
+
+            }
+
+        }
+
+        private void Conectar_Click_1(object sender, EventArgs e)
+        {
+            Coneccion();
         }
     }
 }
