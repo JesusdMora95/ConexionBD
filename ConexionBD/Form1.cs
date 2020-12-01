@@ -18,7 +18,6 @@ namespace ConexionBD
         {
             InitializeComponent();
         }
-        //Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\valen\source\repos\ConeccionBD\Presentacion\Prueba.mdf;Integrated Security = True
 
         public void Coneccion()
         {
